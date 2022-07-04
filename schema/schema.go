@@ -139,6 +139,10 @@ func ParseWithSpecialTableName(dest interface{}, cacheStore *sync.Map, namer Nam
 		tableName = specialTableName
 	}
 
+	if tableName == "" {
+		tableName = GetTableNameEx(modelType)
+	}
+
 	schema := &Schema{
 		Name:           modelType.Name(),
 		ModelType:      modelType,
