@@ -139,8 +139,10 @@ func ParseWithSpecialTableName(dest interface{}, cacheStore *sync.Map, namer Nam
 		tableName = specialTableName
 	}
 
+	// use table name from reflect struct tag
+	// by ludanfeng@zj.tech
 	if tableName == "" {
-		tableName = GetTableNameEx(modelType)
+		tableName = GetTableNameEx(modelType) 
 	}
 
 	schema := &Schema{

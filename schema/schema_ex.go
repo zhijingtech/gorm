@@ -11,8 +11,8 @@ const (
 	GormEx_FieldTableName    = "GormEx_TableName"
 )
 
-// To support special table name which specified by reflect struct tag dynamically
-// add by ludanfeng@zj.tech
+// support special table name which specified by reflect struct tag dynamically
+// by ludanfeng@zj.tech
 func GetTableNameEx(modelType reflect.Type) string {
 	if modelType == nil {
 		return ""
