@@ -311,6 +311,12 @@ func (db *DB) Session(config *Session) *DB {
 	return tx
 }
 
+// WithLogger change current instance db's logger to l
+// by ludanfeng@zj.tech
+func (db *DB) WithLogger(l logger.Interface) *DB {
+	return db.Session(&Session{Logger: l})
+}
+
 // WithContext change current instance db's context to ctx
 func (db *DB) WithContext(ctx context.Context) *DB {
 	return db.Session(&Session{Context: ctx})
